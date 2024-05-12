@@ -1,4 +1,10 @@
 services:
+  image:
+    image: myapp
+    build: ./
+    ports:
+      - 8085:8080
+
   sdk:
     image: mcr.microsoft.com/dotnet/sdk:8.0
     entrypoint: ["dotnet", "watch", "run"]
