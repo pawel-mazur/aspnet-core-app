@@ -1,0 +1,12 @@
+services:
+  sdk:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    entrypoint: ["dotnet", "watch", "run"]
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app
+    working_dir: /app
+    environment:
+      - DOTNET_RUNNING_IN_CONTAINER=true
+      - ASPNETCORE_HTTP_PORTS=8080
